@@ -8,7 +8,7 @@
 <title>Basic Struts 2 Application - Welcome</title>
 </head>
 <body>
-	<h1>Welcome To Struts 2!</h1>
+	<h1>Bem-vindo Struts 2!</h1>
 
 	<!-- TAG URL SEM PARAMETRO -->
 	<p>
@@ -17,21 +17,21 @@
 
 	<!-- TAG URL COM PARAMETRO -->
 	<s:url action="hello" var="helloLink">
-		<s:param name="userName">Bruce Phillips</s:param>
+		<s:param name="userName">Danilo Polastri</s:param>
 	</s:url>
 
 	<p>
-		<a href="${helloLink}">Hello Bruce Phillips</a>
+		<a href="${helloLink}">Hello Danilo Polastri</a>
 	</p>
 
 	<!-- FORM -->
-	<p>Get your own personal hello by filling out and submitting this
-		form.</p>
+	<p>Obtenha seu próprio olá pessoal preenchendo e enviando este
+		Formato.</p>
 
 	<s:form action="hello">
-		<s:textfield name="userName" label="Your name" />
+		<s:textfield name="userName" label="Seu nome" />
 		<s:submit value="Submit" />
 	</s:form>
-	
+
 </body>
 </html>

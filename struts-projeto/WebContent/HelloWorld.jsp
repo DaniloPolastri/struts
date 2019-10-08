@@ -12,18 +12,18 @@
 		<s:property value="messageStore.message" />
 	</h2>
 	<p>
-		I've said hello
+		Hello
 		<s:property value="helloCount" />
-		times!
+		Vezes!
 	</p>
 	<p>
 		<s:property value="messageStore" />
 	</p>
 	<p>
-		<a href="<s:url action='index'/>">Home Page</a>
+		<a href="<s:url action='index'/>">Home </a>
 	</p>
 	<p>
-		<a href="register.jsp">Please register</a> for our prize drawing.
+		<a href="register.jsp">Registar</a>
 	</p>
 </body>
 </html>
