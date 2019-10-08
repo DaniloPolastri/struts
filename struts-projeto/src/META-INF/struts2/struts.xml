@@ -20,7 +20,7 @@
 		</action>
 
 		<action name="register"
-			class="com.br.ebix.struts.action.Register" method="execute">
+			class="com.br.ebix.action.Register" method="execute">
 			<result name="success">/thankyou.jsp</result>
 		</action>
 	</package>
