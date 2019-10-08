@@ -8,10 +8,15 @@ public class HelloWorldAction extends ActionSupport{
 	
 	private static int helloCount = 0;
 	private MessageStore messageStore;
+	private String userName;
 	
 	public String execute(){
 		messageStore = new MessageStore();
 		helloCount++;
+		
+		if (userName != null) {
+		    messageStore.setMessage( messageStore.getMessage() + " " + userName);
+		}
 		
 		return SUCCESS;
 	}
@@ -20,8 +25,18 @@ public class HelloWorldAction extends ActionSupport{
 	    return helloCount;
 	}
 	
-	public MessageStore getMessageStore() {
+	public MessageStore getMessageStore() {	
 		return messageStore;
 	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	
 	
 }
