@@ -23,6 +23,9 @@
 	<p>
 		<a href="${helloLink}">Hello Danilo Polastri</a>
 	</p>
+	<p>
+		<a href="register.jsp">Registar</a>
+	</p>
 
 	<!-- FORM -->
 	<p>Obtenha seu próprio olá pessoal preenchendo e enviando este
