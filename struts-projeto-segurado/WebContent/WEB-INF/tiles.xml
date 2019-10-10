@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+ "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+ "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" template="/dashboard.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/Header.jsp" />
+		<put-attribute name="menu" value="/Menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/Footer.jsp" />
+	</definition>
+	<definition name="/welcome.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Welcome" />
+		<put-attribute name="body" value="/Welcome.jsp" />
+	</definition>
+	<definition name="/cadastrasegurado.tiles"
+		extends="baseLayout">
+		<put-attribute name="title" value="Cadastra Segurado" />
+		<put-attribute name="body" value="/cadastrasegurado.jsp" />
+	</definition>
+	<definition name="/cadastraseguro.tiles"
+		extends="baseLayout">
+		<put-attribute name="title" value="Cadastra Seguro" />
+		<put-attribute name="body" value="/cadastraseguro.jsp" />
+	</definition>
+
+	<definition name="/listaseguro.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Lista Seguro" />
+		<put-attribute name="body" value="/listaseguro.jsp" />
+	</definition>
+
+	<definition name="/listasegurado.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Lista Segurado" />
+		<put-attribute name="body" value="/listasegurado.jsp" />
+	</definition>
+	
+</tiles-definitions>

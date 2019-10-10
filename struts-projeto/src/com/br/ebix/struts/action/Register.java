@@ -10,8 +10,6 @@ public class Register extends ActionSupport {
 	private Person personBean;
 
 	public String execute() throws Exception {
-		// call Service class to store personBean's state in database
-
 		return SUCCESS;
 	}
 

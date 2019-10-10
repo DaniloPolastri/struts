@@ -10,6 +10,29 @@
 
 	<package name="basicstruts2" extends="struts-default">
 
+		<interceptors>
+			<interceptor-stack name="appDefaultStack">
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">ERROR</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref
+			name="appDefaultStack" />
+		<global-results>
+			<result name="securityerror">/securityerror.jsp</result>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping
+				exception="org.apache.struts.register.exceptions.SecurityBreachException"
+				result="securityerror" />
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
 		<action name="index">
 			<result>/index.jsp</result>
 		</action>
@@ -23,6 +46,24 @@
 			class="com.br.ebix.struts.action.Register" method="execute">
 			<result name="success">/thankyou.jsp</result>
 			<result name="input">/register.jsp</result>
+		</action>
+
+		<action name="registerInput"
+			class="com.br.ebix.struts.action.Register" method="input">
+			<result name="input">/register.jsp</result>
+		</action>
+
+
+
+
+		<action name="actionspecificexception"
+			class="org.apache.struts.register.action.Register"
+			method="throwSecurityException">
+			<exception-mapping
+				exception="org.apache.struts.register.exceptions.SecurityBreachException"
+				result="login" />
+			<result>/register.jsp</result>
+			<result name="login">/login.jsp</result>
 		</action>
 	</package>
 
