@@ -10,6 +10,16 @@
 	crossorigin="anonymous">
 <title>Insert title here</title>
 </head>
+<style>
+a:hover {
+	text-decoration: none;
+	color: black;
+	background-color: white;
+}
+a {
+	color: white;
+}
+</style>
 <body>
 	<h1>Lista Segurado</h1>
 

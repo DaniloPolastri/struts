@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,20 +27,21 @@
 						<div class="card-title text-center">
 							<p style="font-size: 35px">Login</p>
 						</div>
-						<s:actionerror />
-						<s:form class="form-signin" action="login.action" method="post">
+						  <s:actionerror/>
+						<s:form class="form-signin" action="login.action" method="post" cssClass="form-horizontal" theme="simple">
 							<div class="form-label-group mt-3">
-								<s:textfield class="form-control rounded-pill"
+								<s:textfield cssClass="form-control rounded-pill"
 									placeholder="Nome" name="username" key="label.username"
 									size="20" />
+
 							</div>
 							<div class="form-label-group mt-3">
-								<s:password class="form-control rounded-pill"
+								<s:password cssClass="form-control rounded-pill"
 									placeholder="Senha" name="password" key="label.password"
 									size="20" />
 							</div>
 							<div class="text-center mt-3">
-								<s:submit class="btn btn-lg btn-secondary rounded-pill medio"
+								<s:submit cssClass="btn btn-lg btn-secondary rounded-pill medio"
 									method="execute" key="label.login" align="center" />
 							</div>
 						</s:form>

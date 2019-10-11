@@ -7,6 +7,16 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <title>Insert title here</title>
 </head>
+<style>
+a:hover {
+	text-decoration: none;
+	color: black;
+	background-color: white;
+}
+a {
+	color: white;
+}
+</style>
 <body>
 	<h1>Lista Seguro</h1>
 

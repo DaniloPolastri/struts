@@ -6,9 +6,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-</head>
-<body>
 
+
+</head>
+<style>
+a:hover {
+	text-decoration: none;
+	color: black;
+	background-color: white;
+}
+a {
+	color: white;
+}
+</style>
+
+<body>
+	
 	<s:a href="cadastra-segurado">CADASTRA SEGURADO</s:a>
 	<br>
 	<div class="dropdown-divider"></div>
