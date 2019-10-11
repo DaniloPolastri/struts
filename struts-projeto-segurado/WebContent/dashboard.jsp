@@ -51,7 +51,6 @@ html {
 
 			<div>
 				<tiles:insertAttribute name="menu" />
-
 			</div>
 		</div>
 		<div class="col-sm-10 box-header ">

@@ -27,16 +27,17 @@
 						<div class="card-title text-center">
 							<p style="font-size: 35px">Login</p>
 						</div>
-						  <s:actionerror/>
+						
+						 	 <s:actionerror />
 						<s:form class="form-signin" action="login.action" method="post" cssClass="form-horizontal" theme="simple">
 							<div class="form-label-group mt-3">
-								<s:textfield cssClass="form-control rounded-pill"
+								<s:textfield cssClass="form-control rounded-pill mb-2"
 									placeholder="Nome" name="username" key="label.username"
 									size="20" />
 
 							</div>
-							<div class="form-label-group mt-3">
-								<s:password cssClass="form-control rounded-pill"
+							<div class="form-label-group">
+								<s:password cssClass="form-control rounded-pill mt-2"
 									placeholder="Senha" name="password" key="label.password"
 									size="20" />
 							</div>

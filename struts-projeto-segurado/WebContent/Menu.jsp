@@ -25,7 +25,7 @@ a {
 	<s:a href="cadastra-segurado">CADASTRA SEGURADO</s:a>
 	<br>
 	<div class="dropdown-divider"></div>
-	<s:a href="cadastra-seguro">CADASTRA SEGURO</s:a>
+	<s:a href="cadastra-seguro-tiles">CADASTRA SEGURO</s:a>
 	<br>
 	<div class="dropdown-divider"></div>
 	<s:a href="lista-segurado">LISTA SEGURADO</s:a>

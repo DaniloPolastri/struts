@@ -27,10 +27,17 @@
 		<action name="cadastra-segurado">
 			<result type="tiles">/cadastrasegurado.tiles</result>
 		</action>
-		<action name="cadastra-seguro">
+		
+		<action name="cadastra-seguro" class="br.com.ebix.action.SeguroAction">
+			<result name="success" type="tiles">/listaseguro.tiles</result>
+			<result name="input" type="tiles">/cadastraseguro.tiles</result>
+		</action>
+		
+		<action name="cadastra-seguro-tiles">
 			<result type="tiles">/cadastraseguro.tiles</result>
 		</action>
-
+		
+	
 		<action name="lista-seguro">
 			<result type="tiles">/listaseguro.tiles</result>
 		</action>
