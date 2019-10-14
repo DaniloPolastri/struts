@@ -24,8 +24,9 @@
 			<result name="error">Login.jsp</result>
 		</action>
 
-		<action name="cadastra-segurado">
-			<result type="tiles">/cadastrasegurado.tiles</result>
+		<action name="cadastra-segurado" class="br.com.ebix.action.SeguradoAction">
+			<result name="success" type="tiles">/listasegurado.tiles</result>
+			<result name="input" type="tiles">/cadastrasegurado.tiles</result>
 		</action>
 		
 		<action name="cadastra-seguro" class="br.com.ebix.action.SeguroAction">
@@ -36,6 +37,11 @@
 		<action name="cadastra-seguro-tiles">
 			<result type="tiles">/cadastraseguro.tiles</result>
 		</action>
+		
+		<action name="cadastra-segurado-tiles">
+			<result type="tiles">/cadastrasegurado.tiles</result>
+		</action>
+		
 		
 	
 		<action name="lista-seguro">

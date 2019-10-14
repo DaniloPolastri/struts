@@ -10,14 +10,15 @@ public class SeguroAction extends ActionSupport {
 
 	private String seguro;
 	private Double valor;
-	
-	public String execute() throws Exception{
+
+	public String execute() throws Exception {
 		Seguro s = new Seguro(seguro, valor);
 		SeguroDao sd = new SeguroDao();
+
 		try {
 			sd.salvar(s);
 			return SUCCESS;
-		}catch (Exception e) {
+		} catch (Exception e) {
 			return ERROR;
 		}
 	}

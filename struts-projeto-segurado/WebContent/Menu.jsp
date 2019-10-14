@@ -22,7 +22,7 @@ a {
 
 <body>
 	
-	<s:a href="cadastra-segurado">CADASTRA SEGURADO</s:a>
+	<s:a href="cadastra-segurado-tiles">CADASTRA SEGURADO</s:a>
 	<br>
 	<div class="dropdown-divider"></div>
 	<s:a href="cadastra-seguro-tiles">CADASTRA SEGURO</s:a>
