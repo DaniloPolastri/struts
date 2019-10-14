@@ -1,12 +1,8 @@
 package br.com.ebix.test;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.util.List;
 
-import br.com.ebix.model.Segurado;
 import br.com.ebix.model.Seguro;
-import br.com.ebix.persistence.SeguradoDao;
 import br.com.ebix.persistence.SeguroDao;
 
 public class Teste {
@@ -18,10 +14,16 @@ public class Teste {
 //		dao.salvar(s);
 //		
 
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+//		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+//		
+//		SeguradoDao daoseg = new SeguradoDao();
+//		Segurado seg = new Segurado("Danilo", "14941705742", "54448778", "masculino", "Sim", "15/11/2019", formatter.parse("11/05/2019"), formatter.parse("11/05/2019"), "11/02/2015");
+//		daoseg.salvar(seg);
 		
-		SeguradoDao daoseg = new SeguradoDao();
-		Segurado seg = new Segurado("Danilo", "14941705742", "54448778", "masculino", "Sim", "15/11/2019", formatter.parse("11/05/2019"), formatter.parse("11/05/2019"), "11/02/2015");
-		daoseg.salvar(seg);
+		Seguro s = new Seguro();
+		SeguroDao dao  = new SeguroDao();
+		
+		List<Seguro> result = dao.findAll();
+		System.out.println(result);
 	}
 }

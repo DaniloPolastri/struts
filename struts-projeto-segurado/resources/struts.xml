@@ -30,7 +30,7 @@
 		</action>
 		
 		<action name="cadastra-seguro" class="br.com.ebix.action.SeguroAction">
-			<result name="success" type="tiles">/listaseguro.tiles</result>
+			<result name="success" type="chain">lista-seguro</result>
 			<result name="input" type="tiles">/cadastraseguro.tiles</result>
 		</action>
 		
@@ -44,9 +44,10 @@
 		
 		
 	
-		<action name="lista-seguro">
-			<result type="tiles">/listaseguro.tiles</result>
+		<action name="lista-seguro" class="br.com.ebix.action.ListarSeguroAction" method="execute">
+			<result name="success" type="tiles">/listaseguro.tiles</result>  
 		</action>
+		
 		<action name="lista-segurado">
 			<result type="tiles">/listasegurado.tiles</result>
 		</action>

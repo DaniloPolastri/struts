@@ -10,6 +10,9 @@ public class SeguroAction extends ActionSupport {
 
 	private String seguro;
 	private Double valor;
+	
+
+	
 
 	public String execute() throws Exception {
 		Seguro s = new Seguro(seguro, valor);
@@ -38,5 +41,6 @@ public class SeguroAction extends ActionSupport {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
+
 
 }
