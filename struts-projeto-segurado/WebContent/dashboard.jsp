@@ -36,10 +36,13 @@ a {
 }
 
 html {
-	position: fixed;
+	position: auto;
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
 }
+
+
 </style>
 <body>
 	<div class="row">
@@ -53,12 +56,15 @@ html {
 				<tiles:insertAttribute name="menu" />
 			</div>
 		</div>
-		<div class="col-sm-10 box-header ">
+		<div class="col-sm-10 box-header">
 
 			<h3 class="text-white p-2" align="center">DASHBOARD</h3>
-			<div class="mt-3">
-				<tiles:insertAttribute name="body" />
+			<div>
+				<div class="mt-3" >
+					<tiles:insertAttribute name="body" />
+				</div>
 			</div>
+
 
 		</div>
 	</div>

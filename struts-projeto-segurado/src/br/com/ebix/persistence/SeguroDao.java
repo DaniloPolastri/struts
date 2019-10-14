@@ -21,20 +21,20 @@ public class SeguroDao extends ConnectionFactory {
 		}
 
 	}
-	
-	public List<Seguro> findAll() throws Exception{
+
+	public List<Seguro> findAll() throws Exception {
 		try {
 			abrirConexao();
 			List<Seguro> seguros = new ArrayList<Seguro>();
 			ps = conexao.prepareStatement("SELECT * FROM seguros");
 			rs = ps.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				Seguro s = new Seguro();
 				s.setSeguro(rs.getString(2));
 				s.setValor(rs.getDouble(3));
 				seguros.add(s);
-				
+
 			}
 			return seguros;
 		} catch (Exception e) {
@@ -44,5 +44,40 @@ public class SeguroDao extends ConnectionFactory {
 		}
 	}
 	
-}
+	public Seguro findById(int id) throws Exception {
+		try {
+			abrirConexao();
+			String sql = "SELECT * FROM seguros WHERE id = " + id;
+			ps = conexao.prepareStatement(sql);
+			rs = ps.executeQuery(sql);
+			Seguro seg = null;
+			if(rs.next()) {
+				seg = new Seguro();
+				seg.setId(rs.getInt(1));
+				seg.setSeguro(rs.getString(2));
+				seg.setValor(rs.getDouble(3));
+			}
+			return seg;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			fechaConexao();
+		}
+	}
+	
+	public void deletar(int id) throws Exception {
+		try {
+			abrirConexao();
+			ps = conexao.prepareStatement("DELETE FROM seguros WHERE id = " + id);
+			ps.execute();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			fechaConexao();
+		}
+	}
 
+
+}

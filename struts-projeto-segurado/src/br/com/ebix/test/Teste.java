@@ -1,7 +1,5 @@
 package br.com.ebix.test;
 
-import java.util.List;
-
 import br.com.ebix.model.Seguro;
 import br.com.ebix.persistence.SeguroDao;
 
@@ -22,8 +20,14 @@ public class Teste {
 		
 		Seguro s = new Seguro();
 		SeguroDao dao  = new SeguroDao();
+//		
+//		List<Seguro> result = dao.findAll();
+//		System.out.println(result);
 		
-		List<Seguro> result = dao.findAll();
-		System.out.println(result);
+		System.out.println(dao.findById(1));
+		dao.deletar(1);
+		System.out.println(dao.findById(1));
+		
+		
 	}
 }

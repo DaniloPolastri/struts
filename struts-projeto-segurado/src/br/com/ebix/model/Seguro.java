@@ -1,18 +1,40 @@
 package br.com.ebix.model;
 
 public class Seguro {
-
+	
+	private Integer id;
 	private String seguro;
 	private Double valor;
 
 	public Seguro() {
 	}
 
+	
 	public Seguro(String seguro, Double valor) {
 		super();
 		this.seguro = seguro;
 		this.valor = valor;
 	}
+	public Seguro(Integer id, String seguro, Double valor) {
+		super();
+		this.id = id;
+		this.seguro = seguro;
+		this.valor = valor;
+	}
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
 
 	public String getSeguro() {
 		return seguro;
@@ -30,10 +52,14 @@ public class Seguro {
 		this.valor = valor;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Seguro [seguro=" + seguro + ", valor=" + valor + "]";
+		return "Seguro [id=" + id + ", seguro=" + seguro + ", valor=" + valor + "]";
 	}
+
+
 	
 	
 
