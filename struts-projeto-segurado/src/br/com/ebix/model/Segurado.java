@@ -3,21 +3,37 @@ package br.com.ebix.model;
 import java.util.Date;
 
 public class Segurado {
-	
+
+	private Integer id;
 	private String nome;
 	private String cpf;
 	private String rg;
 	private String sexo;
-	private String correntista; 
-	private String diasVisita; 
-	private Date dataDeCadastro;
+	private String correntista;
+	private String diasVisita;
+	private Date DataCadastro;
 	private Date dataDeAlteracao;
 	private String data_nasc;
-	
-	public Segurado() {}
 
-	public Segurado(String nome, String cpf, String rg, String sexo, String correntista,
-			String diasVisita, Date dataDeCadastro, Date dataDeAlteracao, String data_nasc) {
+	public Segurado() {
+	}
+
+	public Segurado(Integer id, String nome, String cpf, String rg, String sexo, String correntista, String diasVisita,
+			Date dataCadastro, Date dataDeAlteracao, String data_nasc) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.rg = rg;
+		this.sexo = sexo;
+		this.correntista = correntista;
+		this.diasVisita = diasVisita;
+		this.DataCadastro = dataCadastro;
+		this.dataDeAlteracao = dataDeAlteracao;
+		this.data_nasc = data_nasc;
+	}
+	
+	public Segurado(String nome, String cpf, String rg, String sexo, String correntista, String diasVisita, String data_nasc) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
@@ -25,8 +41,21 @@ public class Segurado {
 		this.sexo = sexo;
 		this.correntista = correntista;
 		this.diasVisita = diasVisita;
-		this.dataDeCadastro = dataDeCadastro;
-		this.dataDeAlteracao = dataDeAlteracao;
+	
+		this.data_nasc = data_nasc;
+	}
+	
+	
+
+	public Segurado(Integer id, String nome, String cpf, String rg, String sexo, String correntista, String diasVisita,
+			String data_nasc) {
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.rg = rg;
+		this.sexo = sexo;
+		this.correntista = correntista;
+		this.diasVisita = diasVisita;
 		this.data_nasc = data_nasc;
 	}
 
@@ -78,14 +107,6 @@ public class Segurado {
 		this.diasVisita = diasVisita;
 	}
 
-	public Date getDataDeCadastro() {
-		return dataDeCadastro;
-	}
-
-	public void setDataDeCadastro(Date dataDeCadastro) {
-		this.dataDeCadastro = dataDeCadastro;
-	}
-
 	public Date getDataDeAlteracao() {
 		return dataDeAlteracao;
 	}
@@ -101,7 +122,30 @@ public class Segurado {
 	public void setData_nasc(String data_nasc) {
 		this.data_nasc = data_nasc;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Date getDataCadastro() {
+		return DataCadastro;
+	}
+
+	public void setDataCadastro(Date dataCadastro) {
+		DataCadastro = dataCadastro;
+	}
+
+	@Override
+	public String toString() {
+		return "Segurado [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", sexo=" + sexo
+				+ ", correntista=" + correntista + ", diasVisita=" + diasVisita + ", DataCadastro=" + DataCadastro
+				+ ", dataDeAlteracao=" + dataDeAlteracao + ", data_nasc=" + data_nasc + "]";
+	}
 	
 	
-	
+
 }

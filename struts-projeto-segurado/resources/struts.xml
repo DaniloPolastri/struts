@@ -25,7 +25,7 @@
 		</action>
 
 		<action name="cadastra-segurado" class="br.com.ebix.action.SeguradoAction" method="execute">
-			<result name="success" type="tiles">/listasegurado.tiles</result>
+			<result name="success" type="chain">lista-segurado</result>
 			<result name="input" type="tiles">/cadastrasegurado.tiles</result>
 		</action>
 		
@@ -37,16 +37,30 @@
 			<result name="success" type="chain">lista-seguro</result>
 			<result name="error" type="chain">lista-seguro</result>
 		</action>
+			<action name="deleta-segurado" class="br.com.ebix.action.SeguradoAction" method="delete">
+			<result name="success" type="chain">lista-segurado</result>
+			<result name="error" type="chain">lista-segurado</result>
+		</action>
+		
 		
 		<action name="alterar-seguro" class="br.com.ebix.action.SeguroAction" method="update">
             <result name="success" type="chain">lista-seguro</result>
             <result name="input" type="tiles">/alterarSeguro.tiles</result>
+        </action>
+        	<action name="alterar-segurado" class="br.com.ebix.action.SeguradoAction" method="update">
+            <result name="success" type="chain">lista-segurado</result>
+            <result name="input" type="tiles">/alterarSegurado.tiles</result>
         </action>
         
           
          <action name="carrega-seguro" class="br.com.ebix.action.SeguroAction" method="find">
             <result name="success" type="tiles">/alterarSeguro.tiles</result>
             <result name="error" type="redirectAction">lista-seguro</result>
+        </action>
+		
+		   <action name="carrega-segurado" class="br.com.ebix.action.SeguradoAction" method="find">
+            <result name="success" type="tiles">/alterarSegurado.tiles</result>
+            <result name="error" type="redirectAction">lista-segurado</result>
         </action>
 		
 		<action name="cadastra-seguro-tiles">
@@ -61,10 +75,12 @@
 		<action name="lista-seguro" class="br.com.ebix.action.SeguroAction" method="listar">
 			<result name="success" type="tiles">/listaseguro.tiles</result>  
 		</action>
-		
-		<action name="lista-segurado">
-			<result type="tiles">/listasegurado.tiles</result>
+			
+		<action name="lista-segurado" class="br.com.ebix.action.SeguradoAction" method="listar">
+			<result name="success" type="tiles">/listasegurado.tiles</result>  
 		</action>
+		
+	
 		<action name="update-seguro" class="br.com.ebix.action.SeguroAction">
             <result>/listasegurado.tiles</result>
         </action>

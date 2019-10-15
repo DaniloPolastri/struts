@@ -14,7 +14,7 @@
 		<div class="card-body">
 			<h2 class="card-title text-center">Cadastra Segurado</h2>
 			<div class="dropdown-divider"></div>
-			<s:form action="cadastra-segurado.action" cssClass="form-horizontal"
+			<s:form action="alterar-segurado" cssClass="form-horizontal"
 				style="margin-left: 70px">
 				<div class="form-row">
 					<div class="mx-auto">
@@ -50,10 +50,12 @@
 								placeholder="Dia de visita" name="diasVisita"
 								key="label.diaVisita" size="50"/>
 						</div>
+					
+							<s:hidden name="id" value="%{id}"/>
 					</div>
 				</div>
 				<div>
-					<s:submit cssClass="btn btn-secondary mt-3" method="execute"
+					<s:submit cssClass="btn btn-secondary mt-3" method="update"
 						key="label.cadastra" align="center" />
 				</div>
 			</s:form>
