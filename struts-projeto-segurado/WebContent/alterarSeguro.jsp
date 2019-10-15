@@ -26,9 +26,9 @@ a {
 <body>
 	<div class="card mx-auto mt-5" style="width: 30rem;">
 		<div class="card-body">
-			<h2 class="card-title text-center">Cadastra Seguro</h2>
+			<h2 class="card-title text-center">Alterar Seguro</h2>
 			<div class="dropdown-divider"></div>
-			<s:form action="cadastra-seguro.action" cssClass="form-horizontal" style="margin-left: 70px">
+			<s:form action="alterar-seguro" method= "post" cssClass="form-horizontal" style="margin-left: 70px">
 				<div class="form-row">
 					<div class="mx-auto">
 						<div class="form-group col-md-12 ">
@@ -40,10 +40,11 @@ a {
 								placeholder="Valor seguro" name="valor" key="label.valor"
 								size="20" />
 						</div>
+						<s:hidden name="id" value="%{id}"/>
 					</div>
 				</div>
 				<div>
-					<s:submit cssClass="btn btn-secondary mt-3" method="execute"
+					<s:submit cssClass="btn btn-secondary mt-3" method="update"
 						key="label.cadastra" align="center" />
 				</div>
 			</s:form>

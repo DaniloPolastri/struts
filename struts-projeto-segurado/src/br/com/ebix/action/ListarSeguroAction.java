@@ -18,6 +18,20 @@ public class ListarSeguroAction extends ActionSupport {
 		return SUCCESS;
 		
 	}
+	
+	public String delete() throws Exception{
+		Seguro s = new Seguro();
+		SeguroDao sd = new SeguroDao();
+		
+		try {
+			sd.deletar(s.getId());
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			addActionError(getText("error.apagaseguro"));
+			return ERROR;
+		}
+	}
 
 	public List<Seguro> getSeguroLista() {
 		return seguroLista;

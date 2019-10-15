@@ -24,7 +24,7 @@
 			<result name="error">Login.jsp</result>
 		</action>
 
-		<action name="cadastra-segurado" class="br.com.ebix.action.SeguradoAction">
+		<action name="cadastra-segurado" class="br.com.ebix.action.SeguradoAction" method="execute">
 			<result name="success" type="tiles">/listasegurado.tiles</result>
 			<result name="input" type="tiles">/cadastrasegurado.tiles</result>
 		</action>
@@ -33,6 +33,21 @@
 			<result name="success" type="chain">lista-seguro</result>
 			<result name="input" type="tiles">/cadastraseguro.tiles</result>
 		</action>
+		<action name="deleta-seguro" class="br.com.ebix.action.SeguroAction" method="delete">
+			<result name="success" type="chain">lista-seguro</result>
+			<result name="error" type="chain">lista-seguro</result>
+		</action>
+		
+		<action name="alterar-seguro" class="br.com.ebix.action.SeguroAction" method="update">
+            <result name="success" type="chain">lista-seguro</result>
+            <result name="input" type="tiles">/alterarSeguro.tiles</result>
+        </action>
+        
+          
+         <action name="carrega-seguro" class="br.com.ebix.action.SeguroAction" method="find">
+            <result name="success" type="tiles">/alterarSeguro.tiles</result>
+            <result name="error" type="redirectAction">lista-seguro</result>
+        </action>
 		
 		<action name="cadastra-seguro-tiles">
 			<result type="tiles">/cadastraseguro.tiles</result>
@@ -43,14 +58,16 @@
 		</action>
 		
 		
-	
-		<action name="lista-seguro" class="br.com.ebix.action.ListarSeguroAction" method="execute">
+		<action name="lista-seguro" class="br.com.ebix.action.SeguroAction" method="listar">
 			<result name="success" type="tiles">/listaseguro.tiles</result>  
 		</action>
 		
 		<action name="lista-segurado">
 			<result type="tiles">/listasegurado.tiles</result>
 		</action>
+		<action name="update-seguro" class="br.com.ebix.action.SeguroAction">
+            <result>/listasegurado.tiles</result>
+        </action>
 
 	</package>
 

@@ -11,12 +11,10 @@ public class Seguro {
 
 	
 	public Seguro(String seguro, Double valor) {
-		super();
 		this.seguro = seguro;
 		this.valor = valor;
 	}
 	public Seguro(Integer id, String seguro, Double valor) {
-		super();
 		this.id = id;
 		this.seguro = seguro;
 		this.valor = valor;

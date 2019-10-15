@@ -31,6 +31,7 @@ public class SeguroDao extends ConnectionFactory {
 
 			while (rs.next()) {
 				Seguro s = new Seguro();
+				s.setId(rs.getInt(1));
 				s.setSeguro(rs.getString(2));
 				s.setValor(rs.getDouble(3));
 				seguros.add(s);
@@ -43,15 +44,15 @@ public class SeguroDao extends ConnectionFactory {
 			conexao.close();
 		}
 	}
-	
-	public Seguro findById(int id) throws Exception {
+
+	public Seguro findById(Integer id) throws Exception {
 		try {
 			abrirConexao();
-			String sql = "SELECT * FROM seguros WHERE id = " + id;
-			ps = conexao.prepareStatement(sql);
-			rs = ps.executeQuery(sql);
+			 ps = conexao.prepareStatement("SELECT * FROM seguros WHERE id = ? ");
+			ps.setLong(1, id);
+			rs = ps.executeQuery();
 			Seguro seg = null;
-			if(rs.next()) {
+			if (rs.next()) {
 				seg = new Seguro();
 				seg.setId(rs.getInt(1));
 				seg.setSeguro(rs.getString(2));
@@ -65,13 +66,13 @@ public class SeguroDao extends ConnectionFactory {
 			fechaConexao();
 		}
 	}
-	
+
 	public void deletar(int id) throws Exception {
 		try {
 			abrirConexao();
 			ps = conexao.prepareStatement("DELETE FROM seguros WHERE id = " + id);
 			ps.execute();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -79,5 +80,20 @@ public class SeguroDao extends ConnectionFactory {
 		}
 	}
 
+	public void update(Seguro s) throws Exception {
+		try {
+			abrirConexao();
+			ps = conexao.prepareStatement("UPDATE seguros set seguro = ? , valor = ? WHERE id = ?");
+			ps.setString(1, s.getSeguro());
+			ps.setDouble(2, s.getValor());
+			ps.setInt(3, s.getId());
+			ps.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			fechaConexao();
+		}
+	}
 
 }

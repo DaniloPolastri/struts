@@ -38,6 +38,7 @@ a {
 				<table class="table table-bordered" >
 					<thead class="thead-dark" >
 						<tr>
+							<th scope="col">ID</th>
 							<th scope="col">Seguro</th>
 							<th scope="col">Valor</th>
 							<th scope="col">Alteração</th>
@@ -46,13 +47,23 @@ a {
 					<tbody>
 						<s:iterator value="seguroLista">
 							<tr>
+								<td><s:property value="id" /></td>
 								<td><s:property value="seguro" /></td>
 								<td><s:property value="valor" /></td>
-								<td><s:a href="#" cssClass="btn btn-danger text-white">
-										<i class="far fa-trash-alt text-white"></i>
-									</s:a> <s:a href="#" cssClass="btn btn-danger text-white">
-										<i class="fas fa-pencil-alt text-white"></i>
-									</s:a></td>
+								
+								<s:url action="deleta-seguro" var="del">
+									<s:param name="id" value="id"></s:param>
+								</s:url>
+								
+								<s:url action="carrega-seguro" var="alt">
+									<s:param name="id" value="id"></s:param>
+								</s:url>
+								
+								<td>
+								<a href="<s:property value="del"/>"  class="btn btn-danger text-white"><i class="far fa-trash-alt text-white"></i></a>
+								 
+								<a href="<s:property value="alt"/>" Class="btn btn-warning text-white"><i class="fas fa-pencil-alt text-white"></i></a>
+								</td>
 							</tr>
 						</s:iterator>
 					</tbody>

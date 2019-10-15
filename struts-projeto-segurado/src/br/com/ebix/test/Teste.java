@@ -23,10 +23,9 @@ public class Teste {
 //		
 //		List<Seguro> result = dao.findAll();
 //		System.out.println(result);
-		
-		System.out.println(dao.findById(1));
-		dao.deletar(1);
-		System.out.println(dao.findById(1));
+		System.out.println(dao.findById(2));
+		dao.deletar(2);
+		System.out.println(dao.findById(2));
 		
 		
 	}

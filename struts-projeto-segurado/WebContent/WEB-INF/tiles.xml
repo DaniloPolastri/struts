@@ -35,5 +35,9 @@
 		<put-attribute name="title" value="Lista Segurado" />
 		<put-attribute name="body" value="/listasegurado.jsp" />
 	</definition>
+	<definition name="/alterarSeguro.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Alterar Seguro" />
+		<put-attribute name="body" value="/alterarSeguro.jsp" />
+	</definition>
 	
 </tiles-definitions>
