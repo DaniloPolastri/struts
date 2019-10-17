@@ -18,13 +18,11 @@
 	height: 100vh;
 	background-color: #000000;
 }
-
 .box-header {
 	width: 100vh;
 	height: 50px;
 	background-color: #000000;
 }
-
 a:hover {
 	text-decoration: none;
 	color: black;
@@ -34,15 +32,12 @@ a:hover {
 a {
 	color: white;
 }
-
 html {
 	position: auto;
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
 }
-
-
 </style>
 <body>
 	<div class="row">

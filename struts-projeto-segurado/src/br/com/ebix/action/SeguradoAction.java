@@ -1,6 +1,5 @@
 package br.com.ebix.action;
 
-import java.util.Date;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;

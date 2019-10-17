@@ -11,7 +11,7 @@ public class SeguradoDao extends ConnectionFactory{
 	
 	public void salvar(Segurado s) throws Exception{
 		try {
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd hh:mm");
 			abrirConexao();
 			ps = conexao.prepareStatement("INSERT INTO segurado values(null,?,?,?,?,?,?,?,?,?)");
 			ps.setString(1, s.getNome());

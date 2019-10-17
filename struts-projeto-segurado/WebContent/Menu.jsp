@@ -5,6 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
 <title>Insert title here</title>
 
 
@@ -15,23 +20,25 @@ a:hover {
 	color: black;
 	background-color: white;
 }
+
 a {
+	text-decoration: none;
 	color: white;
 }
 </style>
 
 <body>
-	
-	<s:a href="cadastra-segurado-tiles">CADASTRA SEGURADO</s:a>
+
+	<s:a href="cadastra-segurado-tiles" cssClass="text-decoration-none">CADASTRA SEGURADO</s:a>
 	<br>
 	<div class="dropdown-divider"></div>
-	<s:a href="cadastra-seguro-tiles">CADASTRA SEGURO</s:a>
+	<s:a href="cadastra-seguro-tiles" cssClass="text-decoration-none">CADASTRA SEGURO</s:a>
 	<br>
 	<div class="dropdown-divider"></div>
-	<s:a href="lista-segurado">LISTA SEGURADO</s:a>
+	<s:a href="lista-segurado" cssClass="text-decoration-none">LISTA SEGURADO</s:a>
 	<br>
 	<div class="dropdown-divider"></div>
-	<s:a href="lista-seguro">LISTA SEGURO</s:a>
+	<s:a href="lista-seguro" cssClass="text-decoration-none">LISTA SEGURO</s:a>
 	<br>
 </body>
 </html>
