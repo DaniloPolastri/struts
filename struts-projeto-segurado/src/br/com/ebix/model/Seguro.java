@@ -54,7 +54,7 @@ public class Seguro {
 
 	@Override
 	public String toString() {
-		return "Seguro [id=" + id + ", seguro=" + seguro + ", valor=" + valor + "]";
+		return seguro ;
 	}
 
 

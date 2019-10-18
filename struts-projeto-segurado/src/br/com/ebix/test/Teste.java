@@ -1,6 +1,7 @@
 package br.com.ebix.test;
 
 import br.com.ebix.model.Seguro;
+import br.com.ebix.persistence.SeguradoDao;
 import br.com.ebix.persistence.SeguroDao;
 import br.com.ebix.persistence.SeguroSeguradoDao;
 
@@ -10,7 +11,7 @@ public class Teste {
 		SeguroSeguradoDao dao = new SeguroSeguradoDao();
 		Seguro s = new Seguro("BRADESCO", 300.00);
 		SeguroDao daoSeguro = new SeguroDao();
-		
+		SeguradoDao daoSegurado = new SeguradoDao();
 //		dao.salvar(s);
 //		
 
@@ -35,11 +36,14 @@ public class Teste {
 		
 		
 		
-		if(dao.salvar(1, 2)) {
-			System.out.println("Salvou");
-		} else {
-			System.out.println("Nao foi");
-		}
+//		if(dao.salvar(2, 32)) {
+//			System.out.println("Salvou");
+//		} else {
+//			System.out.println("Nao foi");
+//		}
+		
+		System.out.println(daoSegurado.findAll());
+		System.out.println(daoSeguro.findAllByName());
 		
 	}
 }

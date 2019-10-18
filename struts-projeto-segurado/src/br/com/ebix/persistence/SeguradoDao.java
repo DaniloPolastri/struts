@@ -1,5 +1,7 @@
 package br.com.ebix.persistence;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,7 +13,7 @@ public class SeguradoDao extends ConnectionFactory{
 	
 	public void salvar(Segurado s) throws Exception{
 		try {
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd hh:mm");
+			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			abrirConexao();
 			ps = conexao.prepareStatement("INSERT INTO segurado values(null,?,?,?,?,?,?,?,?,?)");
 			ps.setString(1, s.getNome());
@@ -20,8 +22,8 @@ public class SeguradoDao extends ConnectionFactory{
 			ps.setString(4, s.getSexo());
 			ps.setString(5, s.getCorrentista());
 			ps.setString(6, s.getDiasVisita());
-			ps.setString(7, formatter.format(new Date()));
-			ps.setString(8, formatter.format(new Date()));
+			ps.setString(7, formatter.format(new Timestamp(new Date().getTime())));
+			ps.setString(8, formatter.format(new Timestamp(new Date().getTime())));
 			ps.setString(9, s.getData_nasc());
 			ps.execute();
 			fechaConexao();
@@ -46,8 +48,8 @@ public class SeguradoDao extends ConnectionFactory{
 				s.setSexo(rs.getString(5));
 				s.setCorrentista(rs.getString(6));
 				s.setDiasVisita(rs.getString(7));
-				s.setDataCadastro(rs.getDate(8));
-				s.setDataDeAlteracao(rs.getDate(9));
+				s.setDataCadastro(rs.getTimestamp(8));
+				s.setDataDeAlteracao(rs.getTimestamp(9));
 				s.setData_nasc(rs.getString(10));
 				segurados.add(s);
 
@@ -76,8 +78,8 @@ public class SeguradoDao extends ConnectionFactory{
 				s.setSexo(rs.getString(5));
 				s.setCorrentista(rs.getString(6));
 				s.setDiasVisita(rs.getString(7));
-				s.setDataCadastro(rs.getDate(8));
-				s.setDataDeAlteracao(rs.getDate(9));
+				s.setDataCadastro(rs.getTimestamp(8));
+				s.setDataDeAlteracao(rs.getTimestamp(9));
 				s.setData_nasc(rs.getString(10));
 			}
 			return s;
@@ -104,7 +106,7 @@ public class SeguradoDao extends ConnectionFactory{
 	}
 	public void update(Segurado s) throws Exception {
 		try {
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+			DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 			abrirConexao();
 			ps = conexao.prepareStatement("UPDATE segurado set nome = ? , cpf = ?, rg = ?, sexo = ?, correntista = ?, diaVisita = ?, dataDeAlteracao = ?, data_nasc = ? WHERE id = ?");
 
@@ -114,7 +116,7 @@ public class SeguradoDao extends ConnectionFactory{
 			ps.setString(4, s.getSexo());
 			ps.setString(5, s.getCorrentista());
 			ps.setString(6, s.getDiasVisita());
-			ps.setString(7, formatter.format(new Date()));
+			ps.setString(7, formatter.format(new Timestamp(new Date().getTime())));
 			ps.setString(8, s.getData_nasc());
 			ps.setInt(9, s.getId());
 			ps.executeUpdate();

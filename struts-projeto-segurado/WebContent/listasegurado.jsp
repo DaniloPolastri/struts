@@ -16,15 +16,7 @@
 <title>Insert title here</title>
 </head>
 <style>
-a:hover {
-	text-decoration: none;
-	color: black;
-	background-color: white;
-}
 
-a {
-	color: white;
-}
 </style>
 <body>
 	<div class="container-fluid">

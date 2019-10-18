@@ -18,11 +18,13 @@
 	height: 100vh;
 	background-color: #000000;
 }
+
 .box-header {
 	width: 100vh;
 	height: 50px;
 	background-color: #000000;
 }
+
 a:hover {
 	text-decoration: none;
 	color: black;
@@ -32,6 +34,7 @@ a:hover {
 a {
 	color: white;
 }
+
 html {
 	position: auto;
 	width: 100%;
@@ -55,7 +58,7 @@ html {
 
 			<h3 class="text-white p-2" align="center">DASHBOARD</h3>
 			<div>
-				<div class="mt-3" >
+				<div class="mt-3">
 					<tiles:insertAttribute name="body" />
 				</div>
 			</div>

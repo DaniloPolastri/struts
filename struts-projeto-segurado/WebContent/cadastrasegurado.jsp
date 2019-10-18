@@ -45,10 +45,14 @@
 								key="label.correntista" />
 						</div>
 						
+							
+						<s:checkboxlist list="seguroLista" name="" label="Seguros"></s:checkboxlist>
+	
+					
 						<div class="form-group col-md-12 ">
 							<s:textfield cssClass="form-control mb-2 mx-auto"
 								placeholder="Dia de visita" name="diasVisita"
-								key="label.diaVisita" size="50"/>
+								key="label.diaVisita" size="50" />
 						</div>
 					</div>
 				</div>

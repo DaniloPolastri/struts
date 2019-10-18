@@ -25,9 +25,9 @@
 		</action>
 
 		<action name="cadastra-segurado"
-			class="br.com.ebix.action.SeguradoAction" method="execute">
+			class="br.com.ebix.action.SeguradoAction">
 			<result name="success" type="chain">lista-segurado</result>
-			<result name="input" type="tiles">/cadastrasegurado.tiles</result>
+			<result name="input" type="chain">/cadastrasegurado.tiles</result>
 		</action>
 
 		<action name="cadastra-seguro"
@@ -35,6 +35,7 @@
 			<result name="success" type="chain">lista-seguro</result>
 			<result name="input" type="tiles">/cadastraseguro.tiles</result>
 		</action>
+
 		<action name="deleta-seguro"
 			class="br.com.ebix.action.SeguroAction" method="delete">
 			<result name="success" type="chain">lista-seguro</result>
@@ -76,7 +77,7 @@
 		</action>
 
 		<action name="cadastra-segurado-tiles">
-			<result type="tiles">/cadastrasegurado.tiles</result>
+			<result type="chain">load-segurado-Form</result>
 		</action>
 
 
@@ -90,6 +91,10 @@
 			<result name="success" type="tiles">/listasegurado.tiles</result>
 		</action>
 
+		<action name="load-segurado-Form"
+			class="br.com.ebix.action.SeguradoAction" method="LoadSeguradoForm">
+			<result name="success" type="tiles">/cadastrasegurado.tiles</result>
+		</action>
 
 		<action name="update-seguro"
 			class="br.com.ebix.action.SeguroAction">

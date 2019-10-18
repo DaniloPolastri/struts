@@ -16,21 +16,23 @@
 </head>
 <style>
 a:hover {
-	text-decoration: none;
-	color: black;
-	background-color: white;
+	text-decoration: none !important;
+	color: black !important;
+	background-color: white !important;
 }
 
 a {
-	text-decoration: none;
-	color: white;
+	text-decoration: none !important;
+	color: white !important;
 }
 </style>
 
 <body>
+	<div>
+		<s:a href="cadastra-segurado-tiles" cssClass="text-decoration-none">CADASTRA SEGURADO</s:a>
+		<br>
+	</div>
 
-	<s:a href="cadastra-segurado-tiles" cssClass="text-decoration-none">CADASTRA SEGURADO</s:a>
-	<br>
 	<div class="dropdown-divider"></div>
 	<s:a href="cadastra-seguro-tiles" cssClass="text-decoration-none">CADASTRA SEGURO</s:a>
 	<br>

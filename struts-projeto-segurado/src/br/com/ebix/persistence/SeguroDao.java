@@ -44,7 +44,27 @@ public class SeguroDao extends ConnectionFactory {
 			conexao.close();
 		}
 	}
+	
+	public List<Seguro> findAllByName() throws Exception {
+		try {
+			abrirConexao();
+			List<Seguro> seguros = new ArrayList<Seguro>();
+			ps = conexao.prepareStatement("SELECT seguro FROM seguros");
+			rs = ps.executeQuery();
 
+			while (rs.next()) {
+				Seguro s = new Seguro();
+				s.setSeguro(rs.getString(1));
+				seguros.add(s);
+			}
+			return seguros;
+		} catch (Exception e) {
+			return null;
+		} finally {
+			conexao.close();
+		}
+	}
+	
 	public Seguro findById(Integer id) throws Exception {
 		try {
 			abrirConexao();
@@ -66,13 +86,15 @@ public class SeguroDao extends ConnectionFactory {
 			fechaConexao();
 		}
 	}
-
+	
 	public void deletar(int id) throws Exception {
+
 		try {
 			abrirConexao();
+			SeguroSeguradoDao dao = new SeguroSeguradoDao();
 			ps = conexao.prepareStatement("DELETE FROM seguros WHERE id = " + id);
-			ps.execute();
-
+			dao.deletarPorSeguro(id);
+			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
