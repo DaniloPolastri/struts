@@ -13,7 +13,8 @@ import br.com.ebix.persistence.LoginDao;
 
 public class LoginAction extends ActionSupport implements SessionAware, ModelDriven<Login>{
 	private static final long serialVersionUID = 1L;
-
+	
+	private String teste;
 	private String username;
 	private String password;
 	private Login login = new Login();
