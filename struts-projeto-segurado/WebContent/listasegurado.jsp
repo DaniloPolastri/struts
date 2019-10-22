@@ -51,8 +51,8 @@
 								<td><s:property value="correntista" /></td>
 								<td><s:property value="data_nasc" /></td>
 								<td><s:property value="diasVisita" /></td>
-								<td><s:property value="DataCadastro" /></td>
-								<td><s:property value="dataDeAlteracao" /></td>
+								<td><s:date name="DataCadastro" format="dd-MM-yyyy HH:mm:ss"/></td>
+								<td><s:date name="dataDeAlteracao" format="dd-MM-yyyy HH:mm:ss" /></td>
 
 								<s:url action="deleta-segurado" var="del">
 									<s:param name="id" value="id"></s:param>
