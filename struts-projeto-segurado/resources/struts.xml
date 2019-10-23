@@ -38,12 +38,13 @@
 			<result name="success" type="tiles">/welcome.tiles</result>
 			<result name="input">/Login.jsp</result>
 		</action>
-		
-		<action name="logoutAction" class="br.com.ebix.action.LogoutAction">
+
+		<action name="logoutAction"
+			class="br.com.ebix.action.LogoutAction">
 			<result name="success" type="redirectAction">login</result>
 		</action>
-		
-		
+
+
 		<action name="home">
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 			<result type="chain">login</result>
@@ -130,7 +131,11 @@
 
 		<action name="load-segurado-Form"
 			class="br.com.ebix.action.SeguradoAction" method="LoadSeguradoForm">
-
+			<result name="success" type="tiles">/cadastrasegurado.tiles</result>
+		</action>
+		
+		<action name="load-dia-Form"
+			class="br.com.ebix.action.SeguradoAction" method="LoadDiaForm">
 			<result name="success" type="tiles">/cadastrasegurado.tiles</result>
 		</action>
 

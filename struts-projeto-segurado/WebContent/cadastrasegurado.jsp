@@ -35,19 +35,20 @@
 								placeholder="Data de nascimento" name="data_nasc"
 								key="label.datanasc" />
 						</div>
+
+						<div class="form-group col-md-12 mb-3">
+							<s:select label="Correntista" headerKey="-1"
+								headerValue="--- Selecione ---"
+								list="#{'Sim':'Sim','Nao':'Nao'}" name="correntista" value="2" />
+						</div>
+
 						<div class="form-group col-md-12 ">
 							<s:radio label="Sexo" name="sexo"
 								list="#{'Masculino':'Masculino','Feminino':'Feminino'}" />
 						</div>
-						<div class="form-group col-md-12 mb-2">
-							<s:select label="Correntista" headerKey="-1"
-								headerValue="--- Selecione ---"
-								list="#{'Sim':'Sim','Nao':'Nao'}"
-								name="correntista" value="2" />
-						</div>
 
-						<s:checkboxlist list="seguroLista" name="" label="Seguros"></s:checkboxlist>
-
+						<s:checkboxlist list="seguroLista.{seguro}" name="" label="Seguros"></s:checkboxlist>
+						<s:checkboxlist list="seguradoDia.{dia}" name="dia" label="Dia"></s:checkboxlist>
 
 						<div class="form-group col-md-12 ">
 							<s:textfield cssClass="form-control mb-2 mx-auto"

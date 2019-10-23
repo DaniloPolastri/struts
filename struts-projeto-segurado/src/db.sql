@@ -35,3 +35,23 @@ CREATE table segurado (
 	data_nasc varchar(15)
 	
 );
+
+CREATE table dias (
+	id int primary key auto_increment, 
+	dias varchar(20)
+);
+
+CREATE table segurado_dia(
+	idsegurado int not null,
+    iddia int not null,
+    Key `fk_idsegurado` (idsegurado),
+    Key `fk_id_dia` (iddia),
+	CONSTRAINT `fk_idsegurado` FOREIGN KEY (`idsegurado`) REFERENCES segurado (`id`),
+	CONSTRAINT `fk_id_dia` FOREIGN KEY (`iddia`) REFERENCES dias (`id`),
+    primary key(idsegurado,iddia)
+);
+
+update dias set dias = 'Sexta' where id = 5;
+
+
+

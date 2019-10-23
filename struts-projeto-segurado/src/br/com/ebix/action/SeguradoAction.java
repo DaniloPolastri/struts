@@ -4,8 +4,10 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import br.com.ebix.model.Dia;
 import br.com.ebix.model.Segurado;
 import br.com.ebix.model.Seguro;
+import br.com.ebix.persistence.DiaDao;
 import br.com.ebix.persistence.SeguradoDao;
 import br.com.ebix.persistence.SeguroDao;
 
@@ -19,9 +21,11 @@ public class SeguradoAction extends ActionSupport {
 	private String sexo;
 	private String correntista;
 	private String diasVisita;
+	private String dia;
 	private Segurado segurado;
 	private List<Segurado> seguradoLista;
 	private List<Seguro> seguroLista;
+	private List<Dia> seguradoDia;
 	
 	private String data_nasc;
 
@@ -48,10 +52,13 @@ public class SeguradoAction extends ActionSupport {
 	
 	public String LoadSeguradoForm() throws Exception {
 		SeguroDao dao = new SeguroDao();
+		DiaDao daoDia = new DiaDao();
+		seguradoDia = daoDia.findAll();
 		seguroLista = dao.findAll();
 		return SUCCESS;
 		
 	}
+
 	
 	public String find() throws Exception {
 		SeguradoDao sd = new SeguradoDao();
@@ -195,6 +202,32 @@ public class SeguradoAction extends ActionSupport {
 	public void setSeguroLista(List<Seguro> seguroLista) {
 		this.seguroLista = seguroLista;
 	}
+
+
+
+	public List<Dia> getSeguradoDia() {
+		return seguradoDia;
+	}
+
+
+
+	public void setSeguradoDia(List<Dia> seguradoDia) {
+		this.seguradoDia = seguradoDia;
+	}
+
+
+
+	public String getDia() {
+		return dia;
+	}
+
+
+
+	public void setDia(String dia) {
+		this.dia = dia;
+	}
+
+
 
 	
 

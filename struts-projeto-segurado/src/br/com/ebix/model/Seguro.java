@@ -51,12 +51,14 @@ public class Seguro {
 	}
 
 
-
 	@Override
 	public String toString() {
-		return seguro ;
+		return "Seguro [id=" + id + ", seguro=" + seguro + ", valor=" + valor + "]";
 	}
 
+
+
+	
 
 	
 	

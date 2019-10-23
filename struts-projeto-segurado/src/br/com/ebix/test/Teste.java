@@ -1,6 +1,8 @@
 package br.com.ebix.test;
 
+import br.com.ebix.model.Dia;
 import br.com.ebix.model.Seguro;
+import br.com.ebix.persistence.DiaDao;
 import br.com.ebix.persistence.SeguradoDao;
 import br.com.ebix.persistence.SeguroDao;
 import br.com.ebix.persistence.SeguroSeguradoDao;
@@ -9,9 +11,12 @@ public class Teste {
 	public static void main(String[] args) throws Exception {
 		
 		SeguroSeguradoDao dao = new SeguroSeguradoDao();
-		Seguro s = new Seguro("BRADESCO", 300.00);
+		//Seguro s = new Seguro("BRADESCO", 300.00);
+		Dia dia = new Dia();
+		DiaDao diaDao = new DiaDao();
 		SeguroDao daoSeguro = new SeguroDao();
 		SeguradoDao daoSegurado = new SeguradoDao();
+		
 //		dao.salvar(s);
 //		
 
@@ -42,8 +47,11 @@ public class Teste {
 //			System.out.println("Nao foi");
 //		}
 		
-		System.out.println(daoSegurado.findAll());
-		System.out.println(daoSeguro.findAllByName());
+//		
+
+		System.out.println(diaDao.findAll());
+//		System.out.println(daoSegurado.findAll());
+//		System.out.println(daoSeguro.findAllByName());
 		
 	}
 }
