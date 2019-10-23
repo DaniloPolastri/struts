@@ -52,6 +52,9 @@ html {
 
 			<div>
 				<tiles:insertAttribute name="menu" />
+				<div class="dropdown-divider"></div>
+				<a class="mt-3 text-danger"
+					href="<%=request.getContextPath()%>/br.com.ebix.action/logoutAction">LOGOUT</a>
 			</div>
 		</div>
 		<div class="col-sm-10 box-header">

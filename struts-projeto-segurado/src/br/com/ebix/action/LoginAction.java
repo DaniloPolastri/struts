@@ -11,18 +11,18 @@ import com.opensymphony.xwork2.ModelDriven;
 import br.com.ebix.model.Login;
 import br.com.ebix.persistence.LoginDao;
 
-public class LoginAction extends ActionSupport implements SessionAware, ModelDriven<Login>{
+public class LoginAction extends ActionSupport implements SessionAware, ModelDriven<Login> {
 	private static final long serialVersionUID = 1L;
-	
-	private String teste;
+
 	private String username;
 	private String password;
 	private Login login = new Login();
 	private Map<String, Object> sessionAttributes = null;
+
 	public String execute() throws Exception {
-		Login login = new Login(username,password);
+		Login login = new Login(username, password);
 		LoginDao ld = new LoginDao();
-		
+
 		if (ld.loginExiste(login)) {
 			sessionAttributes.put("USER", login);
 			return SUCCESS;
@@ -31,6 +31,8 @@ public class LoginAction extends ActionSupport implements SessionAware, ModelDri
 			return INPUT;
 		}
 	}
+
+	
 
 	public String getUsername() {
 		return username;
@@ -56,7 +58,7 @@ public class LoginAction extends ActionSupport implements SessionAware, ModelDri
 	@Override
 	public void setSession(Map<String, Object> sessionAttributes) {
 		this.sessionAttributes = sessionAttributes;
-		
+
 	}
 
 	public Login getLogin() {

@@ -17,7 +17,7 @@
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
-		
+
 		<interceptors>
 			<interceptor name="authentication"
 				class="br.com.ebix.interceptor.MyLoggingInterceptor"></interceptor>
@@ -32,14 +32,17 @@
 		<global-results>
 			<result name="login" type="redirect">/home.action</result>
 		</global-results>
-		
 
-	
 		<action name="login" class="br.com.ebix.action.LoginAction">
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 			<result name="success" type="tiles">/welcome.tiles</result>
 			<result name="input">/Login.jsp</result>
 		</action>
+		
+		<action name="logoutAction" class="br.com.ebix.action.LogoutAction">
+			<result name="success" type="redirectAction">login</result>
+		</action>
+		
 		
 		<action name="home">
 			<interceptor-ref name="defaultStack"></interceptor-ref>
@@ -48,27 +51,27 @@
 
 		<action name="cadastra-segurado"
 			class="br.com.ebix.action.SeguradoAction">
-			<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result name="success" type="chain">lista-segurado</result>
 			<result name="input" type="chain">/cadastrasegurado.tiles</result>
 		</action>
 
 		<action name="cadastra-seguro"
 			class="br.com.ebix.action.SeguroAction">
-			<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result name="success" type="chain">lista-seguro</result>
 			<result name="input" type="tiles">/cadastraseguro.tiles</result>
 		</action>
 
 		<action name="deleta-seguro"
 			class="br.com.ebix.action.SeguroAction" method="delete">
-			<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result name="success" type="chain">lista-seguro</result>
 			<result name="error" type="chain">lista-seguro</result>
 		</action>
 		<action name="deleta-segurado"
 			class="br.com.ebix.action.SeguradoAction" method="delete">
-			<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result name="success" type="chain">lista-segurado</result>
 			<result name="error" type="chain">lista-segurado</result>
 		</action>
@@ -76,13 +79,13 @@
 
 		<action name="alterar-seguro"
 			class="br.com.ebix.action.SeguroAction" method="update">
-			<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result name="success" type="chain">lista-seguro</result>
 			<result name="input" type="tiles">/alterarSeguro.tiles</result>
 		</action>
 		<action name="alterar-segurado"
 			class="br.com.ebix.action.SeguradoAction" method="update">
-			<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result name="success" type="chain">lista-segurado</result>
 			<result name="input" type="tiles">/alterarSegurado.tiles</result>
 		</action>
@@ -90,46 +93,50 @@
 
 		<action name="carrega-seguro"
 			class="br.com.ebix.action.SeguroAction" method="find">
-			<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result name="success" type="tiles">/alterarSeguro.tiles</result>
 			<result name="error" type="redirectAction">lista-seguro</result>
 		</action>
 
 		<action name="carrega-segurado"
 			class="br.com.ebix.action.SeguradoAction" method="find">
-			<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result name="success" type="tiles">/alterarSegurado.tiles</result>
 			<result name="error" type="redirectAction">lista-segurado</result>
 		</action>
 
 		<action name="cadastra-seguro-tiles">
-		<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result type="tiles">/cadastraseguro.tiles</result>
 		</action>
 
 		<action name="cadastra-segurado-tiles">
-		<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result type="chain">load-segurado-Form</result>
 		</action>
 
 
 		<action name="lista-seguro"
 			class="br.com.ebix.action.SeguroAction" method="listar">
+
 			<result name="success" type="tiles">/listaseguro.tiles</result>
 		</action>
 
 		<action name="lista-segurado"
 			class="br.com.ebix.action.SeguradoAction" method="listar">
+
 			<result name="success" type="tiles">/listasegurado.tiles</result>
 		</action>
 
 		<action name="load-segurado-Form"
 			class="br.com.ebix.action.SeguradoAction" method="LoadSeguradoForm">
+
 			<result name="success" type="tiles">/cadastrasegurado.tiles</result>
 		</action>
 
 		<action name="update-seguro"
 			class="br.com.ebix.action.SeguroAction">
+
 			<result>/listasegurado.tiles</result>
 		</action>
 
